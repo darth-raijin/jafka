@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JafkaApplication {
+public class Jafka {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JafkaApplication.class, args);
+		SpringApplication.run(Jafka.class, args);
 	}
 
 }
