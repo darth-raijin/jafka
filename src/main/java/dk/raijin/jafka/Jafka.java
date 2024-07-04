@@ -10,4 +10,5 @@ public class Jafka {
 		SpringApplication.run(Jafka.class, args);
 	}
 
+
 }
