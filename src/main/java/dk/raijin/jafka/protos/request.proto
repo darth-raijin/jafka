@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package dk.raijin.jafka.protos;
+
+option java_package = "dk.raijin.jafka.protos";
+option java_outer_classname = "RequestProto";
+
+/*
+This could fit into a remote repository so the schema is shared.
+Also gives an advantage of having a single source of truth.
+*/
+message Request {
+  string idempotencyKey = 1;
+  string path = 2;
+  string method = 3;
+  map<string, string> queryParams = 4;
+  string jwtToken = 5;
+  map<string, string> headers = 6;
+  int32 statusCode = 7;
+  int64 responseTime = 8;
+  map<string, string> responseHeaders = 9;
+  string clientIp = 10;
+  string userId = 11;
+  repeated string userRoles = 12;
+  string userAgent = 13;
+  string referer = 14;
+  int64 requestSize = 15;
+  int64 responseSize = 16;
+  string tlsProtocol = 17;
+  string tlsCipher = 18;
+  string serverIp = 19;
+  int64 timestamp = 20;
+}
