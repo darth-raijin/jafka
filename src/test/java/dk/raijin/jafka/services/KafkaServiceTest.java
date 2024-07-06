@@ -1,5 +1,7 @@
 package dk.raijin.jafka.services;
 
+import com.google.protobuf.InvalidProtocolBufferException;
+import dk.raijin.jafka.protos.RequestProto;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -23,6 +25,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -49,15 +52,28 @@ public class KafkaServiceTest {
     @Test
     public void shouldConsumePublishedMessage_WhenServicePublishes() {
         String topic = UUID.randomUUID().toString();
-        String message = "Some message";
+        RequestProto.Request message = RequestProto.Request.newBuilder()
+                .setIdempotencyKey(UUID.randomUUID().toString())
+                .setMethod("GET")
+                .setPath("/test")
+                .setAuthToken("Bearer token")
+                .setClientIp("")
+                        .build();
 
-        kafkaService.sendMessage(topic, message.getBytes());
+        kafkaService.sendMessage(topic, message.toByteArray());
 
         Consumer<byte[], byte[]> consumer = createConsumer(topic);
 
         ConsumerRecords<byte[], byte[]> records = KafkaTestUtils.getRecords(consumer);
         assertThat(records.count()).isGreaterThan(0);
-        assertThat(new String(records.iterator().next().value())).isEqualTo(message);
+
+        RequestProto.Request receivedMessage = null;
+        try {
+            receivedMessage = RequestProto.Request.parseFrom(records.iterator().next().value());
+        } catch (InvalidProtocolBufferException e) {
+            fail("Failed to parse message", e);
+        }
+        assertThat(receivedMessage).isEqualTo(message);
     }
 
     @Test
