@@ -1,5 +1,7 @@
 package dk.raijin.jafka.services;
 
+import com.google.protobuf.Message;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -7,21 +9,25 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaService implements MessageService {
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<byte[], byte[]> kafkaTemplate;
     private final FallbackQueue fallbackQueue;
 
     @Autowired
-    public KafkaService(KafkaTemplate<String, String> kafkaTemplate, FallbackQueue fallbackQueue) {
+    public KafkaService(KafkaTemplate<byte[], byte[]> kafkaTemplate,
+                        FallbackQueue fallbackQueue) {
         this.kafkaTemplate = kafkaTemplate;
         this.fallbackQueue = fallbackQueue;
     }
 
     @Override
-    public void sendMessage(String topic, String message) {
+    public void sendMessage(String topic, Message message) {
+        byte[] serializedMessage = message.toByteArray();
+
         try {
-            kafkaTemplate.send(topic, message).get();
+            ProducerRecord<byte[], byte[]> record = new ProducerRecord<>(topic, serializedMessage);
+            kafkaTemplate.send(record).get();
         } catch (Exception e) {
-            fallbackQueue.addMessage(topic, message);
+            fallbackQueue.addMessage(topic, serializedMessage);
         }
     }
 
@@ -31,6 +37,15 @@ public class KafkaService implements MessageService {
             if (failedMessage != null) {
                 sendMessage(failedMessage.getTopic(), failedMessage.getMessage());
             }
+        }
+    }
+
+    public void sendMessage(String topic, byte[] message) {
+        try {
+            ProducerRecord<byte[], byte[]> record = new ProducerRecord<>(topic, message);
+            kafkaTemplate.send(record).get();
+        } catch (Exception e) {
+            fallbackQueue.addMessage(topic, message);
         }
     }
 }

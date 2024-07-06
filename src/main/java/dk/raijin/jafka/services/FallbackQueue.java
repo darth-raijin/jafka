@@ -17,9 +17,9 @@ public class FallbackQueue {
 
     public static class Message {
         private final String topic;
-        private final String message;
+        private final byte[] message;
 
-        public Message(String topic, String message) {
+        public Message(String topic, byte[] message) {
             this.topic = topic;
             this.message = message;
         }
@@ -28,7 +28,7 @@ public class FallbackQueue {
             return topic;
         }
 
-        public String getMessage() {
+        public byte[] getMessage() {
             return message;
         }
     }
@@ -39,7 +39,7 @@ public class FallbackQueue {
     /**
      * addMessage adds a message to the queue. If the queue is full, the oldest message is removed.
      */
-    public void addMessage(String topic, String message) {
+    public void addMessage(String topic, byte[] message) {
         if (queue.size() == maxMessages) {
             queue.poll();
         }

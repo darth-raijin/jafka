@@ -89,16 +89,16 @@ public final class RequestProto {
         java.lang.String key);
 
     /**
-     * <code>string jwtToken = 5;</code>
-     * @return The jwtToken.
+     * <code>string authToken = 5;</code>
+     * @return The authToken.
      */
-    java.lang.String getJwtToken();
+    java.lang.String getAuthToken();
     /**
-     * <code>string jwtToken = 5;</code>
-     * @return The bytes for jwtToken.
+     * <code>string authToken = 5;</code>
+     * @return The bytes for authToken.
      */
     com.google.protobuf.ByteString
-        getJwtTokenBytes();
+        getAuthTokenBytes();
 
     /**
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -135,94 +135,48 @@ public final class RequestProto {
         java.lang.String key);
 
     /**
-     * <code>int32 statusCode = 7;</code>
-     * @return The statusCode.
-     */
-    int getStatusCode();
-
-    /**
-     * <code>int64 responseTime = 8;</code>
-     * @return The responseTime.
-     */
-    long getResponseTime();
-
-    /**
-     * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-     */
-    int getResponseHeadersCount();
-    /**
-     * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-     */
-    boolean containsResponseHeaders(
-        java.lang.String key);
-    /**
-     * Use {@link #getResponseHeadersMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getResponseHeaders();
-    /**
-     * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getResponseHeadersMap();
-    /**
-     * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-     */
-
-    java.lang.String getResponseHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-     */
-
-    java.lang.String getResponseHeadersOrThrow(
-        java.lang.String key);
-
-    /**
-     * <code>string clientIp = 10;</code>
+     * <code>string clientIp = 7;</code>
      * @return The clientIp.
      */
     java.lang.String getClientIp();
     /**
-     * <code>string clientIp = 10;</code>
+     * <code>string clientIp = 7;</code>
      * @return The bytes for clientIp.
      */
     com.google.protobuf.ByteString
         getClientIpBytes();
 
     /**
-     * <code>string userId = 11;</code>
+     * <code>string userId = 8;</code>
      * @return The userId.
      */
     java.lang.String getUserId();
     /**
-     * <code>string userId = 11;</code>
+     * <code>string userId = 8;</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
         getUserIdBytes();
 
     /**
-     * <code>repeated string userRoles = 12;</code>
+     * <code>repeated string userRoles = 9;</code>
      * @return A list containing the userRoles.
      */
     java.util.List<java.lang.String>
         getUserRolesList();
     /**
-     * <code>repeated string userRoles = 12;</code>
+     * <code>repeated string userRoles = 9;</code>
      * @return The count of userRoles.
      */
     int getUserRolesCount();
     /**
-     * <code>repeated string userRoles = 12;</code>
+     * <code>repeated string userRoles = 9;</code>
      * @param index The index of the element to return.
      * @return The userRoles at the given index.
      */
     java.lang.String getUserRoles(int index);
     /**
-     * <code>repeated string userRoles = 12;</code>
+     * <code>repeated string userRoles = 9;</code>
      * @param index The index of the value to return.
      * @return The bytes of the userRoles at the given index.
      */
@@ -230,79 +184,37 @@ public final class RequestProto {
         getUserRolesBytes(int index);
 
     /**
-     * <code>string userAgent = 13;</code>
+     * <code>string userAgent = 10;</code>
      * @return The userAgent.
      */
     java.lang.String getUserAgent();
     /**
-     * <code>string userAgent = 13;</code>
+     * <code>string userAgent = 10;</code>
      * @return The bytes for userAgent.
      */
     com.google.protobuf.ByteString
         getUserAgentBytes();
 
     /**
-     * <code>string referer = 14;</code>
+     * <code>string referer = 11;</code>
      * @return The referer.
      */
     java.lang.String getReferer();
     /**
-     * <code>string referer = 14;</code>
+     * <code>string referer = 11;</code>
      * @return The bytes for referer.
      */
     com.google.protobuf.ByteString
         getRefererBytes();
 
     /**
-     * <code>int64 requestSize = 15;</code>
+     * <code>int64 requestSize = 12;</code>
      * @return The requestSize.
      */
     long getRequestSize();
 
     /**
-     * <code>int64 responseSize = 16;</code>
-     * @return The responseSize.
-     */
-    long getResponseSize();
-
-    /**
-     * <code>string tlsProtocol = 17;</code>
-     * @return The tlsProtocol.
-     */
-    java.lang.String getTlsProtocol();
-    /**
-     * <code>string tlsProtocol = 17;</code>
-     * @return The bytes for tlsProtocol.
-     */
-    com.google.protobuf.ByteString
-        getTlsProtocolBytes();
-
-    /**
-     * <code>string tlsCipher = 18;</code>
-     * @return The tlsCipher.
-     */
-    java.lang.String getTlsCipher();
-    /**
-     * <code>string tlsCipher = 18;</code>
-     * @return The bytes for tlsCipher.
-     */
-    com.google.protobuf.ByteString
-        getTlsCipherBytes();
-
-    /**
-     * <code>string serverIp = 19;</code>
-     * @return The serverIp.
-     */
-    java.lang.String getServerIp();
-    /**
-     * <code>string serverIp = 19;</code>
-     * @return The bytes for serverIp.
-     */
-    com.google.protobuf.ByteString
-        getServerIpBytes();
-
-    /**
-     * <code>int64 timestamp = 20;</code>
+     * <code>int64 timestamp = 13;</code>
      * @return The timestamp.
      */
     long getTimestamp();
@@ -328,15 +240,12 @@ public final class RequestProto {
       idempotencyKey_ = "";
       path_ = "";
       method_ = "";
-      jwtToken_ = "";
+      authToken_ = "";
       clientIp_ = "";
       userId_ = "";
       userRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       userAgent_ = "";
       referer_ = "";
-      tlsProtocol_ = "";
-      tlsCipher_ = "";
-      serverIp_ = "";
     }
 
     @java.lang.Override
@@ -404,7 +313,7 @@ public final class RequestProto {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              jwtToken_ = s;
+              authToken_ = s;
               break;
             }
             case 50: {
@@ -420,91 +329,45 @@ public final class RequestProto {
                   headers__.getKey(), headers__.getValue());
               break;
             }
-            case 56: {
-
-              statusCode_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              responseTime_ = input.readInt64();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                responseHeaders_ = com.google.protobuf.MapField.newMapField(
-                    ResponseHeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              responseHeaders__ = input.readMessage(
-                  ResponseHeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              responseHeaders_.getMutableMap().put(
-                  responseHeaders__.getKey(), responseHeaders__.getValue());
-              break;
-            }
-            case 82: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               clientIp_ = s;
               break;
             }
-            case 90: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               userId_ = s;
               break;
             }
-            case 98: {
+            case 74: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 userRoles_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               userRoles_.add(s);
               break;
             }
-            case 106: {
+            case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
               userAgent_ = s;
               break;
             }
-            case 114: {
+            case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
               referer_ = s;
               break;
             }
-            case 120: {
+            case 96: {
 
               requestSize_ = input.readInt64();
               break;
             }
-            case 128: {
-
-              responseSize_ = input.readInt64();
-              break;
-            }
-            case 138: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tlsProtocol_ = s;
-              break;
-            }
-            case 146: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tlsCipher_ = s;
-              break;
-            }
-            case 154: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serverIp_ = s;
-              break;
-            }
-            case 160: {
+            case 104: {
 
               timestamp_ = input.readInt64();
               break;
@@ -524,7 +387,7 @@ public final class RequestProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           userRoles_ = userRoles_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -545,8 +408,6 @@ public final class RequestProto {
           return internalGetQueryParams();
         case 6:
           return internalGetHeaders();
-        case 9:
-          return internalGetResponseHeaders();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -755,38 +616,38 @@ public final class RequestProto {
       return map.get(key);
     }
 
-    public static final int JWTTOKEN_FIELD_NUMBER = 5;
-    private volatile java.lang.Object jwtToken_;
+    public static final int AUTHTOKEN_FIELD_NUMBER = 5;
+    private volatile java.lang.Object authToken_;
     /**
-     * <code>string jwtToken = 5;</code>
-     * @return The jwtToken.
+     * <code>string authToken = 5;</code>
+     * @return The authToken.
      */
     @java.lang.Override
-    public java.lang.String getJwtToken() {
-      java.lang.Object ref = jwtToken_;
+    public java.lang.String getAuthToken() {
+      java.lang.Object ref = authToken_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        jwtToken_ = s;
+        authToken_ = s;
         return s;
       }
     }
     /**
-     * <code>string jwtToken = 5;</code>
-     * @return The bytes for jwtToken.
+     * <code>string authToken = 5;</code>
+     * @return The bytes for authToken.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getJwtTokenBytes() {
-      java.lang.Object ref = jwtToken_;
+        getAuthTokenBytes() {
+      java.lang.Object ref = authToken_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        jwtToken_ = b;
+        authToken_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -874,113 +735,10 @@ public final class RequestProto {
       return map.get(key);
     }
 
-    public static final int STATUSCODE_FIELD_NUMBER = 7;
-    private int statusCode_;
-    /**
-     * <code>int32 statusCode = 7;</code>
-     * @return The statusCode.
-     */
-    @java.lang.Override
-    public int getStatusCode() {
-      return statusCode_;
-    }
-
-    public static final int RESPONSETIME_FIELD_NUMBER = 8;
-    private long responseTime_;
-    /**
-     * <code>int64 responseTime = 8;</code>
-     * @return The responseTime.
-     */
-    @java.lang.Override
-    public long getResponseTime() {
-      return responseTime_;
-    }
-
-    public static final int RESPONSEHEADERS_FIELD_NUMBER = 9;
-    private static final class ResponseHeadersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  dk.raijin.jafka.protos.RequestProto.internal_static_dk_raijin_jafka_protos_Request_ResponseHeadersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> responseHeaders_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetResponseHeaders() {
-      if (responseHeaders_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ResponseHeadersDefaultEntryHolder.defaultEntry);
-      }
-      return responseHeaders_;
-    }
-
-    public int getResponseHeadersCount() {
-      return internalGetResponseHeaders().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsResponseHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetResponseHeaders().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getResponseHeadersMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getResponseHeaders() {
-      return getResponseHeadersMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.String, java.lang.String> getResponseHeadersMap() {
-      return internalGetResponseHeaders().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getResponseHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetResponseHeaders().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getResponseHeadersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetResponseHeaders().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int CLIENTIP_FIELD_NUMBER = 10;
+    public static final int CLIENTIP_FIELD_NUMBER = 7;
     private volatile java.lang.Object clientIp_;
     /**
-     * <code>string clientIp = 10;</code>
+     * <code>string clientIp = 7;</code>
      * @return The clientIp.
      */
     @java.lang.Override
@@ -997,7 +755,7 @@ public final class RequestProto {
       }
     }
     /**
-     * <code>string clientIp = 10;</code>
+     * <code>string clientIp = 7;</code>
      * @return The bytes for clientIp.
      */
     @java.lang.Override
@@ -1015,10 +773,10 @@ public final class RequestProto {
       }
     }
 
-    public static final int USERID_FIELD_NUMBER = 11;
+    public static final int USERID_FIELD_NUMBER = 8;
     private volatile java.lang.Object userId_;
     /**
-     * <code>string userId = 11;</code>
+     * <code>string userId = 8;</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -1035,7 +793,7 @@ public final class RequestProto {
       }
     }
     /**
-     * <code>string userId = 11;</code>
+     * <code>string userId = 8;</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -1053,10 +811,10 @@ public final class RequestProto {
       }
     }
 
-    public static final int USERROLES_FIELD_NUMBER = 12;
+    public static final int USERROLES_FIELD_NUMBER = 9;
     private com.google.protobuf.LazyStringList userRoles_;
     /**
-     * <code>repeated string userRoles = 12;</code>
+     * <code>repeated string userRoles = 9;</code>
      * @return A list containing the userRoles.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1064,14 +822,14 @@ public final class RequestProto {
       return userRoles_;
     }
     /**
-     * <code>repeated string userRoles = 12;</code>
+     * <code>repeated string userRoles = 9;</code>
      * @return The count of userRoles.
      */
     public int getUserRolesCount() {
       return userRoles_.size();
     }
     /**
-     * <code>repeated string userRoles = 12;</code>
+     * <code>repeated string userRoles = 9;</code>
      * @param index The index of the element to return.
      * @return The userRoles at the given index.
      */
@@ -1079,7 +837,7 @@ public final class RequestProto {
       return userRoles_.get(index);
     }
     /**
-     * <code>repeated string userRoles = 12;</code>
+     * <code>repeated string userRoles = 9;</code>
      * @param index The index of the value to return.
      * @return The bytes of the userRoles at the given index.
      */
@@ -1088,10 +846,10 @@ public final class RequestProto {
       return userRoles_.getByteString(index);
     }
 
-    public static final int USERAGENT_FIELD_NUMBER = 13;
+    public static final int USERAGENT_FIELD_NUMBER = 10;
     private volatile java.lang.Object userAgent_;
     /**
-     * <code>string userAgent = 13;</code>
+     * <code>string userAgent = 10;</code>
      * @return The userAgent.
      */
     @java.lang.Override
@@ -1108,7 +866,7 @@ public final class RequestProto {
       }
     }
     /**
-     * <code>string userAgent = 13;</code>
+     * <code>string userAgent = 10;</code>
      * @return The bytes for userAgent.
      */
     @java.lang.Override
@@ -1126,10 +884,10 @@ public final class RequestProto {
       }
     }
 
-    public static final int REFERER_FIELD_NUMBER = 14;
+    public static final int REFERER_FIELD_NUMBER = 11;
     private volatile java.lang.Object referer_;
     /**
-     * <code>string referer = 14;</code>
+     * <code>string referer = 11;</code>
      * @return The referer.
      */
     @java.lang.Override
@@ -1146,7 +904,7 @@ public final class RequestProto {
       }
     }
     /**
-     * <code>string referer = 14;</code>
+     * <code>string referer = 11;</code>
      * @return The bytes for referer.
      */
     @java.lang.Override
@@ -1164,10 +922,10 @@ public final class RequestProto {
       }
     }
 
-    public static final int REQUESTSIZE_FIELD_NUMBER = 15;
+    public static final int REQUESTSIZE_FIELD_NUMBER = 12;
     private long requestSize_;
     /**
-     * <code>int64 requestSize = 15;</code>
+     * <code>int64 requestSize = 12;</code>
      * @return The requestSize.
      */
     @java.lang.Override
@@ -1175,135 +933,10 @@ public final class RequestProto {
       return requestSize_;
     }
 
-    public static final int RESPONSESIZE_FIELD_NUMBER = 16;
-    private long responseSize_;
-    /**
-     * <code>int64 responseSize = 16;</code>
-     * @return The responseSize.
-     */
-    @java.lang.Override
-    public long getResponseSize() {
-      return responseSize_;
-    }
-
-    public static final int TLSPROTOCOL_FIELD_NUMBER = 17;
-    private volatile java.lang.Object tlsProtocol_;
-    /**
-     * <code>string tlsProtocol = 17;</code>
-     * @return The tlsProtocol.
-     */
-    @java.lang.Override
-    public java.lang.String getTlsProtocol() {
-      java.lang.Object ref = tlsProtocol_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tlsProtocol_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string tlsProtocol = 17;</code>
-     * @return The bytes for tlsProtocol.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTlsProtocolBytes() {
-      java.lang.Object ref = tlsProtocol_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tlsProtocol_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TLSCIPHER_FIELD_NUMBER = 18;
-    private volatile java.lang.Object tlsCipher_;
-    /**
-     * <code>string tlsCipher = 18;</code>
-     * @return The tlsCipher.
-     */
-    @java.lang.Override
-    public java.lang.String getTlsCipher() {
-      java.lang.Object ref = tlsCipher_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tlsCipher_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string tlsCipher = 18;</code>
-     * @return The bytes for tlsCipher.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTlsCipherBytes() {
-      java.lang.Object ref = tlsCipher_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tlsCipher_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SERVERIP_FIELD_NUMBER = 19;
-    private volatile java.lang.Object serverIp_;
-    /**
-     * <code>string serverIp = 19;</code>
-     * @return The serverIp.
-     */
-    @java.lang.Override
-    public java.lang.String getServerIp() {
-      java.lang.Object ref = serverIp_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        serverIp_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string serverIp = 19;</code>
-     * @return The bytes for serverIp.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getServerIpBytes() {
-      java.lang.Object ref = serverIp_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        serverIp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TIMESTAMP_FIELD_NUMBER = 20;
+    public static final int TIMESTAMP_FIELD_NUMBER = 13;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 20;</code>
+     * <code>int64 timestamp = 13;</code>
      * @return The timestamp.
      */
     @java.lang.Override
@@ -1340,8 +973,8 @@ public final class RequestProto {
           internalGetQueryParams(),
           QueryParamsDefaultEntryHolder.defaultEntry,
           4);
-      if (!getJwtTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, jwtToken_);
+      if (!getAuthTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, authToken_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
@@ -1349,50 +982,26 @@ public final class RequestProto {
           internalGetHeaders(),
           HeadersDefaultEntryHolder.defaultEntry,
           6);
-      if (statusCode_ != 0) {
-        output.writeInt32(7, statusCode_);
-      }
-      if (responseTime_ != 0L) {
-        output.writeInt64(8, responseTime_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetResponseHeaders(),
-          ResponseHeadersDefaultEntryHolder.defaultEntry,
-          9);
       if (!getClientIpBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, clientIp_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, clientIp_);
       }
       if (!getUserIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, userId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, userId_);
       }
       for (int i = 0; i < userRoles_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, userRoles_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userRoles_.getRaw(i));
       }
       if (!getUserAgentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, userAgent_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, userAgent_);
       }
       if (!getRefererBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, referer_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, referer_);
       }
       if (requestSize_ != 0L) {
-        output.writeInt64(15, requestSize_);
-      }
-      if (responseSize_ != 0L) {
-        output.writeInt64(16, responseSize_);
-      }
-      if (!getTlsProtocolBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, tlsProtocol_);
-      }
-      if (!getTlsCipherBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, tlsCipher_);
-      }
-      if (!getServerIpBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, serverIp_);
+        output.writeInt64(12, requestSize_);
       }
       if (timestamp_ != 0L) {
-        output.writeInt64(20, timestamp_);
+        output.writeInt64(13, timestamp_);
       }
       unknownFields.writeTo(output);
     }
@@ -1422,8 +1031,8 @@ public final class RequestProto {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, queryParams__);
       }
-      if (!getJwtTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, jwtToken_);
+      if (!getAuthTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, authToken_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetHeaders().getMap().entrySet()) {
@@ -1435,29 +1044,11 @@ public final class RequestProto {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, headers__);
       }
-      if (statusCode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, statusCode_);
-      }
-      if (responseTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, responseTime_);
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetResponseHeaders().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        responseHeaders__ = ResponseHeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(9, responseHeaders__);
-      }
       if (!getClientIpBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, clientIp_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, clientIp_);
       }
       if (!getUserIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, userId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, userId_);
       }
       {
         int dataSize = 0;
@@ -1468,31 +1059,18 @@ public final class RequestProto {
         size += 1 * getUserRolesList().size();
       }
       if (!getUserAgentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, userAgent_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, userAgent_);
       }
       if (!getRefererBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, referer_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, referer_);
       }
       if (requestSize_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(15, requestSize_);
-      }
-      if (responseSize_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(16, responseSize_);
-      }
-      if (!getTlsProtocolBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, tlsProtocol_);
-      }
-      if (!getTlsCipherBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, tlsCipher_);
-      }
-      if (!getServerIpBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, serverIp_);
+          .computeInt64Size(12, requestSize_);
       }
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(20, timestamp_);
+          .computeInt64Size(13, timestamp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1517,16 +1095,10 @@ public final class RequestProto {
           .equals(other.getMethod())) return false;
       if (!internalGetQueryParams().equals(
           other.internalGetQueryParams())) return false;
-      if (!getJwtToken()
-          .equals(other.getJwtToken())) return false;
+      if (!getAuthToken()
+          .equals(other.getAuthToken())) return false;
       if (!internalGetHeaders().equals(
           other.internalGetHeaders())) return false;
-      if (getStatusCode()
-          != other.getStatusCode()) return false;
-      if (getResponseTime()
-          != other.getResponseTime()) return false;
-      if (!internalGetResponseHeaders().equals(
-          other.internalGetResponseHeaders())) return false;
       if (!getClientIp()
           .equals(other.getClientIp())) return false;
       if (!getUserId()
@@ -1539,14 +1111,6 @@ public final class RequestProto {
           .equals(other.getReferer())) return false;
       if (getRequestSize()
           != other.getRequestSize()) return false;
-      if (getResponseSize()
-          != other.getResponseSize()) return false;
-      if (!getTlsProtocol()
-          .equals(other.getTlsProtocol())) return false;
-      if (!getTlsCipher()
-          .equals(other.getTlsCipher())) return false;
-      if (!getServerIp()
-          .equals(other.getServerIp())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1570,20 +1134,11 @@ public final class RequestProto {
         hash = (37 * hash) + QUERYPARAMS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetQueryParams().hashCode();
       }
-      hash = (37 * hash) + JWTTOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getJwtToken().hashCode();
+      hash = (37 * hash) + AUTHTOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthToken().hashCode();
       if (!internalGetHeaders().getMap().isEmpty()) {
         hash = (37 * hash) + HEADERS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetHeaders().hashCode();
-      }
-      hash = (37 * hash) + STATUSCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getStatusCode();
-      hash = (37 * hash) + RESPONSETIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getResponseTime());
-      if (!internalGetResponseHeaders().getMap().isEmpty()) {
-        hash = (37 * hash) + RESPONSEHEADERS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetResponseHeaders().hashCode();
       }
       hash = (37 * hash) + CLIENTIP_FIELD_NUMBER;
       hash = (53 * hash) + getClientIp().hashCode();
@@ -1600,15 +1155,6 @@ public final class RequestProto {
       hash = (37 * hash) + REQUESTSIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestSize());
-      hash = (37 * hash) + RESPONSESIZE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getResponseSize());
-      hash = (37 * hash) + TLSPROTOCOL_FIELD_NUMBER;
-      hash = (53 * hash) + getTlsProtocol().hashCode();
-      hash = (37 * hash) + TLSCIPHER_FIELD_NUMBER;
-      hash = (53 * hash) + getTlsCipher().hashCode();
-      hash = (37 * hash) + SERVERIP_FIELD_NUMBER;
-      hash = (53 * hash) + getServerIp().hashCode();
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
@@ -1732,8 +1278,6 @@ public final class RequestProto {
             return internalGetQueryParams();
           case 6:
             return internalGetHeaders();
-          case 9:
-            return internalGetResponseHeaders();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1747,8 +1291,6 @@ public final class RequestProto {
             return internalGetMutableQueryParams();
           case 6:
             return internalGetMutableHeaders();
-          case 9:
-            return internalGetMutableResponseHeaders();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1787,33 +1329,20 @@ public final class RequestProto {
         method_ = "";
 
         internalGetMutableQueryParams().clear();
-        jwtToken_ = "";
+        authToken_ = "";
 
         internalGetMutableHeaders().clear();
-        statusCode_ = 0;
-
-        responseTime_ = 0L;
-
-        internalGetMutableResponseHeaders().clear();
         clientIp_ = "";
 
         userId_ = "";
 
         userRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         userAgent_ = "";
 
         referer_ = "";
 
         requestSize_ = 0L;
-
-        responseSize_ = 0L;
-
-        tlsProtocol_ = "";
-
-        tlsCipher_ = "";
-
-        serverIp_ = "";
 
         timestamp_ = 0L;
 
@@ -1849,27 +1378,19 @@ public final class RequestProto {
         result.method_ = method_;
         result.queryParams_ = internalGetQueryParams();
         result.queryParams_.makeImmutable();
-        result.jwtToken_ = jwtToken_;
+        result.authToken_ = authToken_;
         result.headers_ = internalGetHeaders();
         result.headers_.makeImmutable();
-        result.statusCode_ = statusCode_;
-        result.responseTime_ = responseTime_;
-        result.responseHeaders_ = internalGetResponseHeaders();
-        result.responseHeaders_.makeImmutable();
         result.clientIp_ = clientIp_;
         result.userId_ = userId_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           userRoles_ = userRoles_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.userRoles_ = userRoles_;
         result.userAgent_ = userAgent_;
         result.referer_ = referer_;
         result.requestSize_ = requestSize_;
-        result.responseSize_ = responseSize_;
-        result.tlsProtocol_ = tlsProtocol_;
-        result.tlsCipher_ = tlsCipher_;
-        result.serverIp_ = serverIp_;
         result.timestamp_ = timestamp_;
         onBuilt();
         return result;
@@ -1933,20 +1454,12 @@ public final class RequestProto {
         }
         internalGetMutableQueryParams().mergeFrom(
             other.internalGetQueryParams());
-        if (!other.getJwtToken().isEmpty()) {
-          jwtToken_ = other.jwtToken_;
+        if (!other.getAuthToken().isEmpty()) {
+          authToken_ = other.authToken_;
           onChanged();
         }
         internalGetMutableHeaders().mergeFrom(
             other.internalGetHeaders());
-        if (other.getStatusCode() != 0) {
-          setStatusCode(other.getStatusCode());
-        }
-        if (other.getResponseTime() != 0L) {
-          setResponseTime(other.getResponseTime());
-        }
-        internalGetMutableResponseHeaders().mergeFrom(
-            other.internalGetResponseHeaders());
         if (!other.getClientIp().isEmpty()) {
           clientIp_ = other.clientIp_;
           onChanged();
@@ -1958,7 +1471,7 @@ public final class RequestProto {
         if (!other.userRoles_.isEmpty()) {
           if (userRoles_.isEmpty()) {
             userRoles_ = other.userRoles_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureUserRolesIsMutable();
             userRoles_.addAll(other.userRoles_);
@@ -1975,21 +1488,6 @@ public final class RequestProto {
         }
         if (other.getRequestSize() != 0L) {
           setRequestSize(other.getRequestSize());
-        }
-        if (other.getResponseSize() != 0L) {
-          setResponseSize(other.getResponseSize());
-        }
-        if (!other.getTlsProtocol().isEmpty()) {
-          tlsProtocol_ = other.tlsProtocol_;
-          onChanged();
-        }
-        if (!other.getTlsCipher().isEmpty()) {
-          tlsCipher_ = other.tlsCipher_;
-          onChanged();
-        }
-        if (!other.getServerIp().isEmpty()) {
-          serverIp_ = other.serverIp_;
-          onChanged();
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
@@ -2380,78 +1878,78 @@ public final class RequestProto {
         return this;
       }
 
-      private java.lang.Object jwtToken_ = "";
+      private java.lang.Object authToken_ = "";
       /**
-       * <code>string jwtToken = 5;</code>
-       * @return The jwtToken.
+       * <code>string authToken = 5;</code>
+       * @return The authToken.
        */
-      public java.lang.String getJwtToken() {
-        java.lang.Object ref = jwtToken_;
+      public java.lang.String getAuthToken() {
+        java.lang.Object ref = authToken_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          jwtToken_ = s;
+          authToken_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string jwtToken = 5;</code>
-       * @return The bytes for jwtToken.
+       * <code>string authToken = 5;</code>
+       * @return The bytes for authToken.
        */
       public com.google.protobuf.ByteString
-          getJwtTokenBytes() {
-        java.lang.Object ref = jwtToken_;
+          getAuthTokenBytes() {
+        java.lang.Object ref = authToken_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          jwtToken_ = b;
+          authToken_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string jwtToken = 5;</code>
-       * @param value The jwtToken to set.
+       * <code>string authToken = 5;</code>
+       * @param value The authToken to set.
        * @return This builder for chaining.
        */
-      public Builder setJwtToken(
+      public Builder setAuthToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        jwtToken_ = value;
+        authToken_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string jwtToken = 5;</code>
+       * <code>string authToken = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJwtToken() {
+      public Builder clearAuthToken() {
         
-        jwtToken_ = getDefaultInstance().getJwtToken();
+        authToken_ = getDefaultInstance().getAuthToken();
         onChanged();
         return this;
       }
       /**
-       * <code>string jwtToken = 5;</code>
-       * @param value The bytes for jwtToken to set.
+       * <code>string authToken = 5;</code>
+       * @param value The bytes for authToken to set.
        * @return This builder for chaining.
        */
-      public Builder setJwtTokenBytes(
+      public Builder setAuthTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        jwtToken_ = value;
+        authToken_ = value;
         onChanged();
         return this;
       }
@@ -2584,199 +2082,9 @@ public final class RequestProto {
         return this;
       }
 
-      private int statusCode_ ;
-      /**
-       * <code>int32 statusCode = 7;</code>
-       * @return The statusCode.
-       */
-      @java.lang.Override
-      public int getStatusCode() {
-        return statusCode_;
-      }
-      /**
-       * <code>int32 statusCode = 7;</code>
-       * @param value The statusCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusCode(int value) {
-        
-        statusCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 statusCode = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatusCode() {
-        
-        statusCode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long responseTime_ ;
-      /**
-       * <code>int64 responseTime = 8;</code>
-       * @return The responseTime.
-       */
-      @java.lang.Override
-      public long getResponseTime() {
-        return responseTime_;
-      }
-      /**
-       * <code>int64 responseTime = 8;</code>
-       * @param value The responseTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResponseTime(long value) {
-        
-        responseTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 responseTime = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResponseTime() {
-        
-        responseTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> responseHeaders_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetResponseHeaders() {
-        if (responseHeaders_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ResponseHeadersDefaultEntryHolder.defaultEntry);
-        }
-        return responseHeaders_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableResponseHeaders() {
-        onChanged();;
-        if (responseHeaders_ == null) {
-          responseHeaders_ = com.google.protobuf.MapField.newMapField(
-              ResponseHeadersDefaultEntryHolder.defaultEntry);
-        }
-        if (!responseHeaders_.isMutable()) {
-          responseHeaders_ = responseHeaders_.copy();
-        }
-        return responseHeaders_;
-      }
-
-      public int getResponseHeadersCount() {
-        return internalGetResponseHeaders().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-       */
-
-      @java.lang.Override
-      public boolean containsResponseHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetResponseHeaders().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getResponseHeadersMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getResponseHeaders() {
-        return getResponseHeadersMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.String, java.lang.String> getResponseHeadersMap() {
-        return internalGetResponseHeaders().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getResponseHeadersOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetResponseHeaders().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getResponseHeadersOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetResponseHeaders().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearResponseHeaders() {
-        internalGetMutableResponseHeaders().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-       */
-
-      public Builder removeResponseHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableResponseHeaders().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableResponseHeaders() {
-        return internalGetMutableResponseHeaders().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-       */
-      public Builder putResponseHeaders(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableResponseHeaders().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; responseHeaders = 9;</code>
-       */
-
-      public Builder putAllResponseHeaders(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableResponseHeaders().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
       private java.lang.Object clientIp_ = "";
       /**
-       * <code>string clientIp = 10;</code>
+       * <code>string clientIp = 7;</code>
        * @return The clientIp.
        */
       public java.lang.String getClientIp() {
@@ -2792,7 +2100,7 @@ public final class RequestProto {
         }
       }
       /**
-       * <code>string clientIp = 10;</code>
+       * <code>string clientIp = 7;</code>
        * @return The bytes for clientIp.
        */
       public com.google.protobuf.ByteString
@@ -2809,7 +2117,7 @@ public final class RequestProto {
         }
       }
       /**
-       * <code>string clientIp = 10;</code>
+       * <code>string clientIp = 7;</code>
        * @param value The clientIp to set.
        * @return This builder for chaining.
        */
@@ -2824,7 +2132,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>string clientIp = 10;</code>
+       * <code>string clientIp = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientIp() {
@@ -2834,7 +2142,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>string clientIp = 10;</code>
+       * <code>string clientIp = 7;</code>
        * @param value The bytes for clientIp to set.
        * @return This builder for chaining.
        */
@@ -2852,7 +2160,7 @@ public final class RequestProto {
 
       private java.lang.Object userId_ = "";
       /**
-       * <code>string userId = 11;</code>
+       * <code>string userId = 8;</code>
        * @return The userId.
        */
       public java.lang.String getUserId() {
@@ -2868,7 +2176,7 @@ public final class RequestProto {
         }
       }
       /**
-       * <code>string userId = 11;</code>
+       * <code>string userId = 8;</code>
        * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
@@ -2885,7 +2193,7 @@ public final class RequestProto {
         }
       }
       /**
-       * <code>string userId = 11;</code>
+       * <code>string userId = 8;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -2900,7 +2208,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>string userId = 11;</code>
+       * <code>string userId = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -2910,7 +2218,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>string userId = 11;</code>
+       * <code>string userId = 8;</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -2928,13 +2236,13 @@ public final class RequestProto {
 
       private com.google.protobuf.LazyStringList userRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureUserRolesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           userRoles_ = new com.google.protobuf.LazyStringArrayList(userRoles_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
          }
       }
       /**
-       * <code>repeated string userRoles = 12;</code>
+       * <code>repeated string userRoles = 9;</code>
        * @return A list containing the userRoles.
        */
       public com.google.protobuf.ProtocolStringList
@@ -2942,14 +2250,14 @@ public final class RequestProto {
         return userRoles_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string userRoles = 12;</code>
+       * <code>repeated string userRoles = 9;</code>
        * @return The count of userRoles.
        */
       public int getUserRolesCount() {
         return userRoles_.size();
       }
       /**
-       * <code>repeated string userRoles = 12;</code>
+       * <code>repeated string userRoles = 9;</code>
        * @param index The index of the element to return.
        * @return The userRoles at the given index.
        */
@@ -2957,7 +2265,7 @@ public final class RequestProto {
         return userRoles_.get(index);
       }
       /**
-       * <code>repeated string userRoles = 12;</code>
+       * <code>repeated string userRoles = 9;</code>
        * @param index The index of the value to return.
        * @return The bytes of the userRoles at the given index.
        */
@@ -2966,7 +2274,7 @@ public final class RequestProto {
         return userRoles_.getByteString(index);
       }
       /**
-       * <code>repeated string userRoles = 12;</code>
+       * <code>repeated string userRoles = 9;</code>
        * @param index The index to set the value at.
        * @param value The userRoles to set.
        * @return This builder for chaining.
@@ -2982,7 +2290,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>repeated string userRoles = 12;</code>
+       * <code>repeated string userRoles = 9;</code>
        * @param value The userRoles to add.
        * @return This builder for chaining.
        */
@@ -2997,7 +2305,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>repeated string userRoles = 12;</code>
+       * <code>repeated string userRoles = 9;</code>
        * @param values The userRoles to add.
        * @return This builder for chaining.
        */
@@ -3010,17 +2318,17 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>repeated string userRoles = 12;</code>
+       * <code>repeated string userRoles = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserRoles() {
         userRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string userRoles = 12;</code>
+       * <code>repeated string userRoles = 9;</code>
        * @param value The bytes of the userRoles to add.
        * @return This builder for chaining.
        */
@@ -3038,7 +2346,7 @@ public final class RequestProto {
 
       private java.lang.Object userAgent_ = "";
       /**
-       * <code>string userAgent = 13;</code>
+       * <code>string userAgent = 10;</code>
        * @return The userAgent.
        */
       public java.lang.String getUserAgent() {
@@ -3054,7 +2362,7 @@ public final class RequestProto {
         }
       }
       /**
-       * <code>string userAgent = 13;</code>
+       * <code>string userAgent = 10;</code>
        * @return The bytes for userAgent.
        */
       public com.google.protobuf.ByteString
@@ -3071,7 +2379,7 @@ public final class RequestProto {
         }
       }
       /**
-       * <code>string userAgent = 13;</code>
+       * <code>string userAgent = 10;</code>
        * @param value The userAgent to set.
        * @return This builder for chaining.
        */
@@ -3086,7 +2394,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>string userAgent = 13;</code>
+       * <code>string userAgent = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserAgent() {
@@ -3096,7 +2404,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>string userAgent = 13;</code>
+       * <code>string userAgent = 10;</code>
        * @param value The bytes for userAgent to set.
        * @return This builder for chaining.
        */
@@ -3114,7 +2422,7 @@ public final class RequestProto {
 
       private java.lang.Object referer_ = "";
       /**
-       * <code>string referer = 14;</code>
+       * <code>string referer = 11;</code>
        * @return The referer.
        */
       public java.lang.String getReferer() {
@@ -3130,7 +2438,7 @@ public final class RequestProto {
         }
       }
       /**
-       * <code>string referer = 14;</code>
+       * <code>string referer = 11;</code>
        * @return The bytes for referer.
        */
       public com.google.protobuf.ByteString
@@ -3147,7 +2455,7 @@ public final class RequestProto {
         }
       }
       /**
-       * <code>string referer = 14;</code>
+       * <code>string referer = 11;</code>
        * @param value The referer to set.
        * @return This builder for chaining.
        */
@@ -3162,7 +2470,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>string referer = 14;</code>
+       * <code>string referer = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearReferer() {
@@ -3172,7 +2480,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>string referer = 14;</code>
+       * <code>string referer = 11;</code>
        * @param value The bytes for referer to set.
        * @return This builder for chaining.
        */
@@ -3190,7 +2498,7 @@ public final class RequestProto {
 
       private long requestSize_ ;
       /**
-       * <code>int64 requestSize = 15;</code>
+       * <code>int64 requestSize = 12;</code>
        * @return The requestSize.
        */
       @java.lang.Override
@@ -3198,7 +2506,7 @@ public final class RequestProto {
         return requestSize_;
       }
       /**
-       * <code>int64 requestSize = 15;</code>
+       * <code>int64 requestSize = 12;</code>
        * @param value The requestSize to set.
        * @return This builder for chaining.
        */
@@ -3209,7 +2517,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>int64 requestSize = 15;</code>
+       * <code>int64 requestSize = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestSize() {
@@ -3219,268 +2527,9 @@ public final class RequestProto {
         return this;
       }
 
-      private long responseSize_ ;
-      /**
-       * <code>int64 responseSize = 16;</code>
-       * @return The responseSize.
-       */
-      @java.lang.Override
-      public long getResponseSize() {
-        return responseSize_;
-      }
-      /**
-       * <code>int64 responseSize = 16;</code>
-       * @param value The responseSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResponseSize(long value) {
-        
-        responseSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 responseSize = 16;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResponseSize() {
-        
-        responseSize_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tlsProtocol_ = "";
-      /**
-       * <code>string tlsProtocol = 17;</code>
-       * @return The tlsProtocol.
-       */
-      public java.lang.String getTlsProtocol() {
-        java.lang.Object ref = tlsProtocol_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tlsProtocol_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string tlsProtocol = 17;</code>
-       * @return The bytes for tlsProtocol.
-       */
-      public com.google.protobuf.ByteString
-          getTlsProtocolBytes() {
-        java.lang.Object ref = tlsProtocol_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tlsProtocol_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string tlsProtocol = 17;</code>
-       * @param value The tlsProtocol to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlsProtocol(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tlsProtocol_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tlsProtocol = 17;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlsProtocol() {
-        
-        tlsProtocol_ = getDefaultInstance().getTlsProtocol();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tlsProtocol = 17;</code>
-       * @param value The bytes for tlsProtocol to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlsProtocolBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tlsProtocol_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tlsCipher_ = "";
-      /**
-       * <code>string tlsCipher = 18;</code>
-       * @return The tlsCipher.
-       */
-      public java.lang.String getTlsCipher() {
-        java.lang.Object ref = tlsCipher_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tlsCipher_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string tlsCipher = 18;</code>
-       * @return The bytes for tlsCipher.
-       */
-      public com.google.protobuf.ByteString
-          getTlsCipherBytes() {
-        java.lang.Object ref = tlsCipher_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tlsCipher_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string tlsCipher = 18;</code>
-       * @param value The tlsCipher to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlsCipher(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tlsCipher_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tlsCipher = 18;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlsCipher() {
-        
-        tlsCipher_ = getDefaultInstance().getTlsCipher();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tlsCipher = 18;</code>
-       * @param value The bytes for tlsCipher to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlsCipherBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tlsCipher_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object serverIp_ = "";
-      /**
-       * <code>string serverIp = 19;</code>
-       * @return The serverIp.
-       */
-      public java.lang.String getServerIp() {
-        java.lang.Object ref = serverIp_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          serverIp_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string serverIp = 19;</code>
-       * @return The bytes for serverIp.
-       */
-      public com.google.protobuf.ByteString
-          getServerIpBytes() {
-        java.lang.Object ref = serverIp_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          serverIp_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string serverIp = 19;</code>
-       * @param value The serverIp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setServerIp(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        serverIp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string serverIp = 19;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearServerIp() {
-        
-        serverIp_ = getDefaultInstance().getServerIp();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string serverIp = 19;</code>
-       * @param value The bytes for serverIp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setServerIpBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        serverIp_ = value;
-        onChanged();
-        return this;
-      }
-
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 20;</code>
+       * <code>int64 timestamp = 13;</code>
        * @return The timestamp.
        */
       @java.lang.Override
@@ -3488,7 +2537,7 @@ public final class RequestProto {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 20;</code>
+       * <code>int64 timestamp = 13;</code>
        * @param value The timestamp to set.
        * @return This builder for chaining.
        */
@@ -3499,7 +2548,7 @@ public final class RequestProto {
         return this;
       }
       /**
-       * <code>int64 timestamp = 20;</code>
+       * <code>int64 timestamp = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -3576,11 +2625,6 @@ public final class RequestProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_dk_raijin_jafka_protos_Request_HeadersEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_dk_raijin_jafka_protos_Request_ResponseHeadersEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_dk_raijin_jafka_protos_Request_ResponseHeadersEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3591,25 +2635,19 @@ public final class RequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\rrequest.proto\022\026dk.raijin.jafka.protos\"" +
-      "\275\005\n\007Request\022\026\n\016idempotencyKey\030\001 \001(\t\022\014\n\004p" +
+      "\275\003\n\007Request\022\026\n\016idempotencyKey\030\001 \001(\t\022\014\n\004p" +
       "ath\030\002 \001(\t\022\016\n\006method\030\003 \001(\t\022E\n\013queryParams" +
       "\030\004 \003(\01320.dk.raijin.jafka.protos.Request." +
-      "QueryParamsEntry\022\020\n\010jwtToken\030\005 \001(\t\022=\n\007he" +
-      "aders\030\006 \003(\0132,.dk.raijin.jafka.protos.Req" +
-      "uest.HeadersEntry\022\022\n\nstatusCode\030\007 \001(\005\022\024\n" +
-      "\014responseTime\030\010 \001(\003\022M\n\017responseHeaders\030\t" +
-      " \003(\01324.dk.raijin.jafka.protos.Request.Re" +
-      "sponseHeadersEntry\022\020\n\010clientIp\030\n \001(\t\022\016\n\006" +
-      "userId\030\013 \001(\t\022\021\n\tuserRoles\030\014 \003(\t\022\021\n\tuserA" +
-      "gent\030\r \001(\t\022\017\n\007referer\030\016 \001(\t\022\023\n\013requestSi" +
-      "ze\030\017 \001(\003\022\024\n\014responseSize\030\020 \001(\003\022\023\n\013tlsPro" +
-      "tocol\030\021 \001(\t\022\021\n\ttlsCipher\030\022 \001(\t\022\020\n\010server" +
-      "Ip\030\023 \001(\t\022\021\n\ttimestamp\030\024 \001(\003\0322\n\020QueryPara" +
+      "QueryParamsEntry\022\021\n\tauthToken\030\005 \001(\t\022=\n\007h" +
+      "eaders\030\006 \003(\0132,.dk.raijin.jafka.protos.Re" +
+      "quest.HeadersEntry\022\020\n\010clientIp\030\007 \001(\t\022\016\n\006" +
+      "userId\030\010 \001(\t\022\021\n\tuserRoles\030\t \003(\t\022\021\n\tuserA" +
+      "gent\030\n \001(\t\022\017\n\007referer\030\013 \001(\t\022\023\n\013requestSi" +
+      "ze\030\014 \001(\003\022\021\n\ttimestamp\030\r \001(\003\0322\n\020QueryPara" +
       "msEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032" +
       ".\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t:\0028\001\0326\n\024ResponseHeadersEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B&\n\026dk.raijin.jaf" +
-      "ka.protosB\014RequestProtob\006proto3"
+      "\001(\t:\0028\001B&\n\026dk.raijin.jafka.protosB\014Reque" +
+      "stProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3620,7 +2658,7 @@ public final class RequestProto {
     internal_static_dk_raijin_jafka_protos_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_dk_raijin_jafka_protos_Request_descriptor,
-        new java.lang.String[] { "IdempotencyKey", "Path", "Method", "QueryParams", "JwtToken", "Headers", "StatusCode", "ResponseTime", "ResponseHeaders", "ClientIp", "UserId", "UserRoles", "UserAgent", "Referer", "RequestSize", "ResponseSize", "TlsProtocol", "TlsCipher", "ServerIp", "Timestamp", });
+        new java.lang.String[] { "IdempotencyKey", "Path", "Method", "QueryParams", "AuthToken", "Headers", "ClientIp", "UserId", "UserRoles", "UserAgent", "Referer", "RequestSize", "Timestamp", });
     internal_static_dk_raijin_jafka_protos_Request_QueryParamsEntry_descriptor =
       internal_static_dk_raijin_jafka_protos_Request_descriptor.getNestedTypes().get(0);
     internal_static_dk_raijin_jafka_protos_Request_QueryParamsEntry_fieldAccessorTable = new
@@ -3632,12 +2670,6 @@ public final class RequestProto {
     internal_static_dk_raijin_jafka_protos_Request_HeadersEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_dk_raijin_jafka_protos_Request_HeadersEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_dk_raijin_jafka_protos_Request_ResponseHeadersEntry_descriptor =
-      internal_static_dk_raijin_jafka_protos_Request_descriptor.getNestedTypes().get(2);
-    internal_static_dk_raijin_jafka_protos_Request_ResponseHeadersEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_dk_raijin_jafka_protos_Request_ResponseHeadersEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
   }
 

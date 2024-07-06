@@ -1,5 +1,6 @@
 package dk.raijin.jafka.filter;
 
+import dk.raijin.jafka.protos.RequestProto;
 import dk.raijin.jafka.services.MessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +27,15 @@ public class PublishingFilter implements GlobalFilter, Ordered {
 
         return chain.filter(exchange)
                 .then(Mono.fromRunnable(() -> {
-                    String message = UUID.randomUUID().toString();
+                    RequestProto.Request message = RequestProto.Request.newBuilder()
+                            .setIdempotencyKey(UUID.randomUUID().toString())
+                            .setMethod(exchange.getRequest().getMethod().name())
+                            .setPath(exchange.getRequest().getPath().value())
+                            .setAuthToken(exchange.getRequest().getHeaders().getFirst("Authorization"))
+                            .setClientIp(exchange.getRequest().getRemoteAddress().toString()) // TODO: Brug lige debugger igen
+                            .setTimestamp(System.currentTimeMillis())
+                            .build();
+
                     logger.info("PublishingFilter: Sending message to Kafka: {}", message);
                     messageService.sendMessage("Auth", message);
                 }));
